@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        section {
+            padding: 20px;
+            margin-top: 60px; /* Ensure content doesn't get hidden under the fixed header */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sticky Header Example</h1>
+    </header>
+
+    <section>
+        <h2>Content Goes Here</h2>
+        <!-- Add more content here -->
+    </section>
+
+    <script>
+        window.onscroll = function() {
+            // Get the header
+            var header = document.querySelector("header");
+
+            // Add the sticky class to the header when you reach its scroll position
+            if (window.pageYOffset > 0) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        };
+    </script>
+
+</body>
+</html>
